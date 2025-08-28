@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bala's Dice Roll</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bala's Dice Roll</h1>
+
+        <div class="dice-area">
+            <div id="result" class="result" aria-live="polite"></div>
+
+            <!-- Rolling GIF shown during the 2s delay -->
+            <img id="rollingGif" class="rolling-gif" src="/static/rolling.gif" alt="Rolling..." hidden onerror="this.hidden=true;document.getElementById('fallback').hidden=false;">
+            <div id="fallback" class="fallback-spinner" hidden>Rolling...</div>
+        </div>
+
+        <div class="buttons">
+            <button id="rollBtn" class="btn primary">Roll the dice</button>
+            <button id="resetBtn" class="btn">Reset</button>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+<!-- Note: Place your rolling GIF at static/rolling.gif -->
+</html>
+
+
+

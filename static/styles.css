@@ -1,0 +1,91 @@
+/* Basic layout */
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: #ffffff; /* White background as requested */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
+    color: #111;
+}
+
+.container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 2.2rem;
+}
+
+.dice-area {
+    margin: 32px 0 20px;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.result {
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    min-height: 5.5rem;
+}
+
+.rolling-gif {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn {
+    appearance: none;
+    border: 1px solid #cfd3d8;
+    background: #f7f7f8;
+    color: #111;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.02s ease;
+}
+
+.btn:hover {
+    background: #f0f1f2;
+    border-color: #b9bec4;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn.primary {
+    background: #2563eb;
+    color: #fff;
+    border-color: #1e4fd6;
+}
+
+.btn.primary:hover {
+    background: #1f4fc6;
+}
+
+.fallback-spinner {
+    font-size: 1rem;
+    color: #555;
+}
+
+
+
