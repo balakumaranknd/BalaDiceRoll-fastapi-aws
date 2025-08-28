@@ -1,35 +1,52 @@
 /* Basic layout */
 html, body {
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
-    background: #ffffff; /* White background as requested */
+    background: url('/static/48457-Hollywood-Casino.jpg') no-repeat center center fixed;
+    background-size: cover;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
     color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 .container {
     max-width: 640px;
-    margin: 0 auto;
+    width: 100%;
     padding: 40px 20px;
     text-align: center;
-}
-
-h1 {
-    margin-top: 0;
-    font-size: 2.2rem;
-}
-
-.dice-area {
-    margin: 32px 0 20px;
-    min-height: 140px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    color: #1f2937;
+}
+
+.dice-area {
+    margin: 0;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex: 1;
 }
 
 .result {
@@ -37,18 +54,24 @@ h1 {
     font-weight: 700;
     letter-spacing: 2px;
     min-height: 5.5rem;
+    color: #1f2937;
+    margin-bottom: 20px;
 }
 
 .rolling-gif {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    display: none;
 }
 
 .buttons {
     display: flex;
     gap: 12px;
     justify-content: center;
+    margin-top: 40px;
 }
 
 .btn {
@@ -63,13 +86,20 @@ h1 {
     transition: background 0.15s ease, border-color 0.15s ease, transform 0.02s ease;
 }
 
-.btn:hover {
+.btn:hover:not(:disabled) {
     background: #f0f1f2;
     border-color: #b9bec4;
 }
 
-.btn:active {
+.btn:active:not(:disabled) {
     transform: translateY(1px);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: #e5e7eb;
+    border-color: #d1d5db;
 }
 
 .btn.primary {
@@ -78,13 +108,24 @@ h1 {
     border-color: #1e4fd6;
 }
 
-.btn.primary:hover {
+.btn.primary:hover:not(:disabled) {
     background: #1f4fc6;
 }
 
 .fallback-spinner {
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #555;
+    animation: pulse 1.5s ease-in-out infinite;
+    display: none;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
 }
 
 

@@ -8,25 +8,28 @@
 </head>
 <body>
     <div class="container">
-        <h1>Bala's Dice Roll</h1>
+        <header>
+            <h1>Bala's Dice Roll</h1>
+        </header>
 
-        <div class="dice-area">
-            <div id="result" class="result" aria-live="polite"></div>
+        <main>
+            <div class="dice-area">
+                <div id="result" class="result" aria-live="polite" role="status"></div>
 
-            <!-- Rolling GIF shown during the 2s delay -->
-            <img id="rollingGif" class="rolling-gif" src="/static/rolling.gif" alt="Rolling..." hidden onerror="this.hidden=true;document.getElementById('fallback').hidden=false;">
-            <div id="fallback" class="fallback-spinner" hidden>Rolling...</div>
-        </div>
+                <!-- Rolling GIF shown during the 2s delay -->
+                <img id="rollingGif" class="rolling-gif" src="/static/dice.gif" alt="Dice rolling animation" hidden>
+                <div id="fallback" class="fallback-spinner" hidden>🎲 Rolling... 🎲</div>
+            </div>
 
-        <div class="buttons">
-            <button id="rollBtn" class="btn primary">Roll the dice</button>
-            <button id="resetBtn" class="btn">Reset</button>
-        </div>
+            <div class="buttons">
+                <button id="rollBtn" class="btn primary" type="button">Roll the dice</button>
+                <button id="resetBtn" class="btn" type="button">Reset</button>
+            </div>
+        </main>
     </div>
 
     <script src="/static/app.js"></script>
 </body>
-<!-- Note: Place your rolling GIF at static/rolling.gif -->
 </html>
 
 
